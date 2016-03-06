@@ -34,4 +34,9 @@ class User extends Authenticatable
         'email' => 'required|email|unique:users',
         'password' => 'required'
     ];
+
+    public function posts()
+    {
+      return $this->belongsTo('App\Post');
+    }
 }

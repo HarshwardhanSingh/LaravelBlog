@@ -21,6 +21,8 @@
           </div>
           <div class="panel-body">
             {{ $post->content }}
+            <br/>
+            <h5><b>Created By: </b>{{$post->user->name}}</h5>
           </div>
         </div>
       @endforeach

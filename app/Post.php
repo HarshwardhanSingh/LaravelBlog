@@ -20,4 +20,10 @@ class Post extends Model
       'content'=>'required',
       'slug'=>'required'
     ];
+    public function user()
+    {
+      return $this->belongsTo('App\User');
+    }
+
+
 }
