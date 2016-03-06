@@ -47,6 +47,8 @@ class PostsController extends Controller
     {
         $this->validate($request,Post::$create_validation_rules);
         $data = $request->only('title','content','slug');
+        $data['user_id'] = \Auth::user()->id;
+        // dd($data);
         $post = Post::create($data);
         if($post)
         {

@@ -19,7 +19,7 @@ class UsersController extends Controller
     public function listPosts($username)
     {
       $user = User::where('name','=',$username)->firstOrFail();;
-      
+
       $posts = $user->posts;
       if (count($posts)>0)
       {
