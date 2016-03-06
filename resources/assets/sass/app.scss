@@ -1,2 +1,29 @@
-// @import "node_modules/bootstrap-sass/assets/stylesheets/bootstrap";
+@import "node_modules/bootstrap-sass/assets/stylesheets/bootstrap";
 
+body
+{
+  background-color: #f8f8f8;
+}
+nav.navbar-default
+{
+  background-color: #ffffff;
+}
+
+.form-control
+{
+  border-radius: 0px;
+}
+
+.post-form
+{
+  max-width:450px;
+  margin:0 auto;
+
+  form
+  {
+    background-color: rgb(249, 249, 249);
+    padding: 10px;
+    border: 1px solid rgb(233, 233, 233);
+    box-shadow: 0px 0px 3px 1px rgb(233, 233, 233);
+  }
+}

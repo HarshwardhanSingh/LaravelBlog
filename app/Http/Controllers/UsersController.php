@@ -7,6 +7,7 @@ use Illuminate\Http\Request;
 use App\Http\Requests;
 
 use App\User;
+use App\Post;
 
 class UsersController extends Controller
 {
@@ -15,6 +16,19 @@ class UsersController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
+    public function listPosts($username)
+    {
+      $user = User::where('name','=',$username)->firstOrFail();;
+      
+      $posts = $user->posts;
+      if (count($posts)>0)
+      {
+        return view('users.dashboard',compact('posts'));
+      }
+      return "No Posts to Show for ".$user->name;
+
+    }
+
     public function index()
     {
         //

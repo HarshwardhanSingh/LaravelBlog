@@ -33,4 +33,5 @@ Route::group(['middleware' => ['web']], function () {
     Route::get('/logout',['middleware'=>'auth','as'=>'logout','uses'=>'AuthController@logout']);
     Route::resource('users','UsersController',['only'=>['create','store']]);
     Route::resource('posts','PostsController');
+    Route::get('/{username}',['as'=>'UserPosts','uses'=>'UsersController@listPosts']);
 });
