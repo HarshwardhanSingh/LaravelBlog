@@ -16,6 +16,10 @@ class UsersController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
+     public function __construct()
+     {
+       $this->middleware('guest', ['except' => ['index']]);
+     }
     public function listPosts($username)
     {
       $user = User::where('name','=',$username)->firstOrFail();;
