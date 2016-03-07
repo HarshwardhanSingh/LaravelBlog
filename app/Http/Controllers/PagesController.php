@@ -10,6 +10,13 @@ class PagesController extends Controller
 {
     public function welcome()
     {
-      return view('pages.welcome');
+      if(\Auth::user())
+      {
+        return redirect()->route('posts.index');
+      }
+      else
+      {
+        return view('pages.welcome');
+      }
     }
 }

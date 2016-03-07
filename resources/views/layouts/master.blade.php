@@ -8,7 +8,7 @@
 <nav class="navbar navbar-default">
 	<div class="container">
 		<div class="navbar-header">
-			{{ link_to_route('home','InnFact',null,array('class' => 'navbar-brand')) }}
+			{{ link_to_route('root','InnFact',null,array('class' => 'navbar-brand')) }}
 		</div>
 		<ul class="navbar-nav nav navbar-right">
 			@if(\Auth::check())

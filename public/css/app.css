@@ -5,6 +5,7 @@
  * Licensed under MIT (https://github.com/twbs/bootstrap/blob/master/LICENSE)
  */
 /*! normalize.css v3.0.3 | MIT License | github.com/necolas/normalize.css */
+@import url(https://fonts.googleapis.com/css?family=Open+Sans);
 html {
   font-family: sans-serif;
   -ms-text-size-adjust: 100%;
@@ -5750,10 +5751,7 @@ button.close {
     display: none !important; } }
 
 body {
-  background-color: #f8f8f8; }
-
-nav.navbar-default {
-  background-color: #ffffff; }
+  font-family: 'Open Sans', sans-serif; }
 
 .form-control {
   border-radius: 0px; }
