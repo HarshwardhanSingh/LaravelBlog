@@ -3,7 +3,7 @@
 @section('content')
   <div class="row">
     <div class="col-md-6 col-md-offset-3">
-      <div class="post-form">
+      <div class="post_form">
         <h3>Create Post</h3>
         <hr/>
         @if($errors->count())

@@ -23,7 +23,7 @@ class PostsController extends Controller
      */
     public function index()
     {
-        $posts = Post::all();
+        $posts = Post::latest('created_at')->get();
         return view('posts.index',compact('posts'));
     }
 
@@ -94,7 +94,7 @@ class PostsController extends Controller
         $data = $request->only('title','content','slug');
         $post = Post::find($id);
         $post->update($data);
-        return redirect()->route('posts.edit',$id);
+        return redirect()->route('posts.index');
     }
 
     /**
