@@ -15,15 +15,12 @@
   			@endif
         {!! Form::open(array('route' => 'posts.store')) !!}
           <div class="form-group">
-            {!! Form::label('title') !!}
             {!! Form::text('title',null,array('class'=>'form-control','placeholder'=> 'Post Title')) !!}
           </div>
           <div class="form-group">
-            {!! Form::label('content') !!}
             {!! Form::textarea('content',null,array('class'=>'form-control','placeholder'=> 'Post Content','rows'=>'5')) !!}
           </div>
           <div class="form-group">
-            {!! Form::label('slug') !!}
             {!! Form::text('slug',null,array('class'=>'form-control','placeholder'=> 'Post Slug')) !!}
           </div>
           <div class="form-group">
