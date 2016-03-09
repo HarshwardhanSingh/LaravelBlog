@@ -7,6 +7,7 @@ use Illuminate\Http\Request;
 use App\Http\Requests;
 
 use App\Post;
+use App\Like;
 
 class PostsController extends Controller
 {
@@ -107,5 +108,23 @@ class PostsController extends Controller
     {
         Post::destroy($id);
         return redirect()->route('posts.index');
+    }
+
+    public function like($id)
+    {
+      $data['post_id'] = $id;
+      $data['user_id'] = \Auth::user()->id;
+      Like::create($data);
+      return back();
+    }
+
+    public function unlike($id)
+    {
+      $data['post_id'] = $id;
+      $data['user_id'] = \Auth::user()->id;
+      $like = Like::whereUserIdAndPostId(\Auth::user()->id,$id)->first();
+      // dd($like);
+      Like::destroy($like->id);
+      return back();
     }
 }

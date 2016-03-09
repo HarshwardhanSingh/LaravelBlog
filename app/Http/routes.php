@@ -30,6 +30,10 @@ Route::group(['middleware' => ['web']], function () {
     Route::post('/handlelogin',['as'=>'handlelogin','uses'=>'AuthController@handle_login']);
     Route::get('/home',['middleware'=>'auth','as' => 'home','uses' => 'UsersController@home']);
     Route::get('/logout',['middleware'=>'auth','as'=>'logout','uses'=>'AuthController@logout']);
+
+    Route::get('/like/{id}',['middleware'=>'auth','as'=>'like','uses'=>'PostsController@like']);
+    Route::get('/unlike/{id}',['middleware'=>'auth','as'=>'unlike','uses'=>'PostsController@unlike']);
+
     Route::resource('users','UsersController',['only'=>['create','store']]);
     Route::resource('posts','PostsController');
     Route::get('/{username}',['as'=>'UserPosts','uses'=>'UsersController@listPosts']);

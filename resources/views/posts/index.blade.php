@@ -9,7 +9,7 @@
             <div class="post-header">
                 <h4>{{ $post->title }}</h4>
                 <div class="timestamp">
-                  {{ $post->created_at->diffforHumans()}}
+                  {{$post->user->name}} {{ $post->created_at->diffforHumans()}}
                 </div>
                 <div class="action-btns">
                   @if(\Auth::user())
@@ -26,8 +26,11 @@
             <div class="post-body">
               {{ $post->content }}
               <br/>
-              <br/>
-              <h6><b>Posted By: </b>{{$post->user->name}}</h6>
+              @if($post->iflikes($post->id))
+                {{ link_to_route('unlike','UnLike',array($post->id),array('class' => 'btn btn-danger btn-sm unlike-btn')) }}
+              @else
+                {{ link_to_route('like','Like',array($post->id),array('class' => 'btn btn-success btn-sm like-btn')) }}
+              @endif
             </div>
           </div>
         @endforeach
